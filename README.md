@@ -1,6 +1,6 @@
 # Task-Manager
 
-The goal of this project is to implement a task management application. To achieve that, I've implemented a back-end [`Spring Boot`](https://docs.spring.io/spring-boot/index.html) service and a font-end [React](https://react.dev/) application. I will also be using [`JWT Authentication`](https://en.wikipedia.org/wiki/JSON_Web_Token) to secure both applications.
+The goal of this project is to implement a task management application. To achieve that, I've implemented a back-end [`Spring Boot`](https://docs.spring.io/spring-boot/index.html) service and a frontend [React](https://react.dev/) application. I will also be using [`JWT Authentication`](https://en.wikipedia.org/wiki/JSON_Web_Token) to secure both applications.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ The goal of this project is to implement a task management application. To achie
 
   The `Spring Boot` service exposes a few endpoints in order to allow for the creation, retrieval and deletion of tasks. In addition, there are a few endpoints which allow for user registration and login.
 
-  Most of the service's secured endpoints can be accessed if a valid JWT access token is provided in the header of the request.
+  Most of the service's endpoints can be accessed if a valid JWT access token is provided in the header of the request.
 
   This service stores data in a `MySQL` database and has the following endpoints:
 
@@ -51,4 +51,4 @@ The goal of this project is to implement a task management application. To achie
 8. To start the backend spring boot service go back to the project's root directory using the terminal and run ```mvn spring-boot:run```, which should make the service available on http://localhost:8080.
 9. If the spring service doesn't start on that port or the URL differs you will need to amend the `proxy` config entry in `/frontend/package.json`
 
-Running the spring boot service should automatically create 2 db tables `tasks` and `users`.
+Running the spring boot service should automatically create 2 db tables, `tasks` and `users`.

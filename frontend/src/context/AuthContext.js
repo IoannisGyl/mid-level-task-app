@@ -30,9 +30,9 @@ export const AuthProvider = ({ children }) => {
             body: JSON.stringify(formData),
         });
 
-        if (!response.ok) throw new Error("Login failed");
+        const data = await response.text(); // Read the response as text
 
-        const data = await response.text();
+        if (!response.ok || !data || data === "Invalid credentials" || data === "Something went wrong") throw new Error("Login failed");
         dispatch({ type: "LOGIN", payload: { user: formData.user, token: data } });
     };
 

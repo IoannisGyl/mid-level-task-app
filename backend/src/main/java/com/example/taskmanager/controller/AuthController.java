@@ -27,11 +27,16 @@ public class AuthController {
     // POST /login: User authentication
     @PostMapping("/login")
     public String login(@RequestBody User user) {
-        String token = userService.authenticateUser(user.getUsername(),user.getPassword());
-        if (token != null) {
-            return token;
+        try {
+            String token = userService.authenticateUser(user.getUsername(), user.getPassword());
+            if (token != null) {
+                return token;
+            }
+            return "Invalid credentials";
+        }catch (Exception e) {
+            System.out.println("Error occurred while authenticating user: " + e.getMessage());
+            return "Something went wrong";
         }
-        return "Invalid credentials";
     }
 
     // Optional: User registration
